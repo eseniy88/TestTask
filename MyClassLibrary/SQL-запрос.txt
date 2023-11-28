@@ -1,0 +1,8 @@
+В БД MYSQL Server есть продукты и категории. Одному продукту может соответствовать много категорий, в одной категории может быть много продуктов.
+SQL-запрос для выбора всех пар "ИМЯ продукта"-"Имя категории". Если у продавца нет категории, то его имя все равно должно выводиться:
+
+SELECT p.ProductName, c.CategoryName FROM Product p
+LEFT JOIN ProductCategory pc
+	ON p.ProductID = pc.ProductID
+LEFT JOIN Categories c
+	ON pc.CategoryID = c.CategoryID
